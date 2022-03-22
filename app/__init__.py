@@ -1,3 +1,4 @@
+from ensurepip import bootstrap
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
@@ -7,20 +8,22 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from config import Config
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host="0.0.0.0") #host="0.0.0.0" will make the page accessable
+                            #by going to http://[ip]:5000/ on any computer in 
+                            #the network.
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 mail = Mail(app)
+bootstrap = Bootstrap(app)
 
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host="0.0.0.0") #host="0.0.0.0" will make the page accessable
-                            #by going to http://[ip]:5000/ on any computer in 
-                            #the network.
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
