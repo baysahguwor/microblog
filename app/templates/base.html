@@ -1,36 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
-
-        <style>
-                #header {
-                    background-color: rgb(14, 14, 14);
-                    height: 50px;
-                    font-size: 30px;
-                    color:aliceblue;            
-                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                }
-                a #header{
-                    color:aliceblue;  
-                }
-
-                #logout{
-                    text-align:right; 
-                }
-        </style>
-            {% if title %}
-            <title> {{ title }} - Microblog</title>
-            {% else %}
-            <title>Welcome to Microblog</title>
-            {% endif %}
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
     </head>
     <body>
-        <div id="header">Microblog: 
+        <div>
+            Microblog:
             <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('explore') }}">Explore</a>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Login</a>
             {% else %}
-            <a id="logout" href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
         </div>
         <hr>
@@ -43,13 +29,5 @@
         </ul>
         {% endif %}
         {% endwith %}
-
-        {% block content %} {% endblock %}
-
-        <div > 
-            <hr>
-            <p>All right reserved @ 2022</p>
-        </div>
-    </body>
-
-</html>
+        {% block content %}{% endblock %}
+  </body>

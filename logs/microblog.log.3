@@ -1,0 +1,123 @@
+2022-03-19 22:43:17,566 ERROR: Exception on /reset_password_request [POST] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\app\routes.py", line 179, in reset_password_request
+    send_password_reset_email(user)
+  File "C:\microblog\app\email.py", line 14, in send_password_reset_email
+    send_email('[Microblog] Reset Your Password',
+  File "C:\microblog\app\email.py", line 10, in send_email
+    mail.send(msg)
+  File "C:\microblog\venv\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\microblog\venv\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "C:\microblog\venv\lib\site-packages\flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2022-03-19 22:43:55,294 ERROR: Exception on /reset_password_request [POST] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\app\routes.py", line 179, in reset_password_request
+    send_password_reset_email(user)
+  File "C:\microblog\app\email.py", line 14, in send_password_reset_email
+    send_email('[Microblog] Reset Your Password',
+  File "C:\microblog\app\email.py", line 10, in send_email
+    mail.send(msg)
+  File "C:\microblog\venv\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\microblog\venv\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "C:\microblog\venv\lib\site-packages\flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\guwor\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2022-03-19 22:45:35,570 INFO: Microblog startup [in C:\microblog\app\__init__.py:42]
+2022-03-20 17:08:05,005 INFO: Microblog startup [in C:\microblog\app\__init__.py:42]
+2022-03-20 17:11:04,328 INFO: Microblog startup [in C:\microblog\app\__init__.py:42]
+2022-03-20 17:42:36,774 INFO: Microblog startup [in C:\microblog\app\__init__.py:42]
+2022-03-20 18:03:52,968 INFO: Microblog startup [in C:\microblog\app\__init__.py:42]
+2022-03-20 18:09:40,835 INFO: Microblog startup [in C:\microblog\app\__init__.py:43]
+2022-03-20 18:09:49,790 ERROR: Exception on /reset_password_request [POST] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\app\routes.py", line 101, in reset_password_request
+    user = User.query.filter_by(email=form.email.data).first()
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2810, in first
+    return self.limit(1)._iter().first()
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('guworbaysah@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-03-20 18:10:55,377 INFO: Microblog startup [in C:\microblog\app\__init__.py:43]

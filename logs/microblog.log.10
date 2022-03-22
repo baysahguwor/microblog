@@ -1,0 +1,154 @@
+2022-03-17 12:27:10,605 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 32, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:27:14,145 ERROR: Exception on /user/love [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 99, in user
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:28:15,117 INFO: Microblog startup [in C:\microblog\app\__init__.py:39]
+2022-03-17 12:28:37,369 ERROR: Exception on /explore [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 45, in explore
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:28:39,507 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 32, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:28:41,207 ERROR: Exception on /user/love [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 99, in user
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:31:59,243 INFO: Microblog startup [in C:\microblog\app\__init__.py:39]
+2022-03-17 12:32:04,528 ERROR: Exception on /explore [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 45, in explore
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:32:07,564 ERROR: Exception on /user/love [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 99, in user
+    page, app.config['POSTS_PER_PAGE'], True)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:32:11,470 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 32, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:32:38,053 INFO: Microblog startup [in C:\microblog\app\__init__.py:39]
+2022-03-17 12:32:42,099 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 32, in index
+    page, app.config['POSTS_PER_PAGE'], True)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:32:43,977 ERROR: Exception on /explore [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 45, in explore
+    page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-03-17 12:33:08,387 INFO: Microblog startup [in C:\microblog\app\__init__.py:39]
