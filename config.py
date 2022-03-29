@@ -8,16 +8,16 @@ load_dotenv(os.path.join(basedir, '.env'))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', '').replace(
-        'postgres://wwgnscdmwcvgym:83fa35aa96e398e0f7f0e224bd9353888a51eae5136fecf86c8a7f9bdb2de665@ec2-52-73-155-171.compute-1.amazonaws.com:5432/dcahr6a06v9f12', 'postgresql://') or \
+        'postgres://', 'postgresql://') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
-    MAIL_SERVER = os.environ.get('smtp.googlemail.com')
+    MAIL_SERVER = os.environ.get('MAIL_SERVER')
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
-    MAIL_USERNAME = os.environ.get('guworbaysah@gmail.com')
-    MAIL_PASSWORD = os.environ.get('Baysah@369109')
-    ADMINS = ['guworbaysah@gmail.com']
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    ADMINS = ['your-email@example.com']
     LANGUAGES = ['en', 'es']
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
