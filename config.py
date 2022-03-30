@@ -8,7 +8,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', '').replace(
-        'postgres://', 'postgresql://') or \
+        'postgres://tnuflevxpzrcqm:bfb08517637467ace620c0283d2fcb2de8c3466ea451b12f2f898be224d1f67f@ec2-3-217-251-77.compute-1.amazonaws.com:5432/d3g9uttl5ka4b5', 'postgresql://') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
