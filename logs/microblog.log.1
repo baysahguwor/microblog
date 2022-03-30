@@ -1,13 +1,4 @@
-2022-03-29 14:53:58,522 ERROR: Exception on /auth/register [POST] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
-Traceback (most recent call last):
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1802, in _execute_context
-    self.dialect.do_execute(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
+2022-03-30 11:36:23,208 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
 Traceback (most recent call last):
   File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,104 +8,129 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\microblog\app\auth\routes.py", line 42, in register
-    if form.validate_on_submit():
-  File "C:\microblog\venv\lib\site-packages\flask_wtf\form.py", line 86, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "C:\microblog\venv\lib\site-packages\wtforms\form.py", line 329, in validate
-    return super().validate(extra)
-  File "C:\microblog\venv\lib\site-packages\wtforms\form.py", line 146, in validate
-    if not field.validate(self, extra):
-  File "C:\microblog\venv\lib\site-packages\wtforms\fields\core.py", line 242, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "C:\microblog\venv\lib\site-packages\wtforms\fields\core.py", line 262, in _run_validation_chain
-    validator(form, self)
-  File "C:\microblog\app\auth\forms.py", line 25, in validate_username
-    user = User.query.filter_by(username=username.data).first()
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2810, in first
-    return self.limit(1)._iter().first()
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2894, in _iter
-    result = self.session.execute(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1692, in execute
-    result = conn._execute_20(statement, params or {}, execution_options)
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1614, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 325, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1481, in _execute_clauseelement
-    ret = self._execute_context(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1845, in _execute_context
-    self._handle_dbapi_exception(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2026, in _handle_dbapi_exception
-    util.raise_(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
-    raise exception
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1802, in _execute_context
-    self.dialect.do_execute(
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
-[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
-FROM user 
-WHERE user.username = ?
- LIMIT ? OFFSET ?]
-[parameters: ('test', 1, 0)]
-(Background on this error at: https://sqlalche.me/e/14/e3q8)
-2022-03-29 14:55:16,122 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
-2022-03-29 14:55:36,193 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
-2022-03-29 14:56:05,835 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
-2022-03-29 14:57:23,744 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
-2022-03-29 15:17:35,136 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
-2022-03-29 15:17:38,132 ERROR: Exception on / [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
-Traceback (most recent call last):
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\util\_collections.py", line 1008, in __call__
-    return self.registry[key]
-KeyError: <greenlet.greenlet object at 0x00000287660BD900 (otid=0x00000287660B3300) current active started main>
-
-During handling of the above exception, another exception occurred:
-
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:36:25,165 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
 Traceback (most recent call last):
   File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
   File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1514, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1857, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-  File "C:\microblog\app\main\routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "C:\microblog\venv\lib\site-packages\werkzeug\local.py", line 436, in __get__
-    obj = instance._get_current_object()
-  File "C:\microblog\venv\lib\site-packages\werkzeug\local.py", line 565, in _get_current_object
-    return self.__local()  # type: ignore
-  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "C:\microblog\app\models.py", line 126, in load_user
-    return User.query.get(int(id))
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 552, in __get__
-    return type.query_class(mapper, session=self.sa.session())
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 47, in __call__
-    sess = self.registry()
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\util\_collections.py", line 1010, in __call__
-    return self.registry.setdefault(key, self.createfunc())
-  File "C:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4205, in __call__
-    return self.class_(**local_kw)
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 176, in __init__
-    bind = options.pop('bind', None) or db.engine
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 998, in engine
-    return self.get_engine()
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 1017, in get_engine
-    return connector.get_engine()
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 593, in get_engine
-    sa_url, options = self.get_options(sa_url, echo)
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 608, in get_options
-    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
-  File "C:\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 933, in apply_driver_hacks
-    if sa_url.drivername.startswith('mysql'):
-AttributeError: 'NoneType' object has no attribute 'drivername'
-2022-03-29 15:19:23,002 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:36:25,976 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:36:26,370 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:36:26,781 ERROR: Exception on /index [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:38:46,078 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
+2022-03-30 11:38:51,482 ERROR: Exception on / [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:41:49,627 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
+2022-03-30 11:41:52,636 ERROR: Exception on / [GET] [in C:\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\microblog\venv\lib\site-packages\flask_login\utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "C:\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 165, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\microblog\venv\lib\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\microblog\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2022-03-30 11:43:11,645 INFO: Microblog startup [in C:\microblog\app\__init__.py:82]
